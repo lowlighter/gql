@@ -1,12 +1,12 @@
 import {
   createHandler,
-  OperationContext,
-  RawRequest,
+  type OperationContext,
+  type RawRequest,
   STATUS_TEXT,
   type StatusCode,
 } from './deps.ts'
-import { accepts } from 'https://deno.land/std@0.221.0/http/negotiation.ts'
-import { GQLOptions } from './types.ts'
+import { accepts } from 'jsr:@std/http@0.224.5/negotiation'
+import type { GQLOptions } from './types.ts'
 
 function toRequest<Req = Request, Ctx = unknown>(
   req: Pick<Request, 'method' | 'url' | 'headers' | 'text'>,
@@ -34,7 +34,7 @@ export function GraphQLHTTP<
     ...options
   }: GQLOptions<Req, ReqCtx, Context>,
   reqCtx?: (req: Req) => ReqCtx,
-) {
+): (req: Request) => Promise<Response> {
   const handler = createHandler(options)
 
   return async function handleRequest(req: Request): Promise<Response> {

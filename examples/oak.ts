@@ -1,7 +1,7 @@
 import {
   Application,
-  Middleware,
-  Request as OakRequest,
+  type Middleware,
+  type Request as OakRequest,
   Router,
 } from 'https://deno.land/x/oak@14.2.0/mod.ts'
 import { GraphQLHTTP } from '../mod.ts'

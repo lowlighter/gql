@@ -1,4 +1,4 @@
-import { filterXSS } from 'https://esm.sh/xss@1.0.15/'
+import { filterXSS } from 'npm:xss@1.0.15'
 import { getLoadingMarkup } from './markup.ts'
 
 export interface MiddlewareOptions {
@@ -56,6 +56,7 @@ export interface EditorColours {
 }
 
 export interface IntrospectionResult {
+  // deno-lint-ignore no-explicit-any
   __schema: any
 }
 

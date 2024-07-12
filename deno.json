@@ -1,18 +1,23 @@
 {
+  "name": "@lowlighter/gql",
+  "version": "2.0.2-rc1",
+  "exports": {
+    ".": "./mod.ts"
+  },
   "fmt": {
-    "options": {
-      "useTabs": false,
-      "lineWidth": 80,
-      "indentWidth": 2,
-      "singleQuote": true,
-      "semiColons": false
-    }
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "singleQuote": true,
+    "semiColons": false
   },
   "tasks": {
     "test": "deno test --allow-net --coverage=coverage",
     "test:audit": "deno test --allow-net audit_test.ts"
   },
   "test": {
-    "exclude": ["audit_test.ts"]
+    "exclude": [
+      "audit_test.ts"
+    ]
   }
 }
